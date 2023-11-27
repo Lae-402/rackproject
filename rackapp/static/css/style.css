@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "しねきゃぷしょん";
+    src: url("../fonts/cinecaption226.ttf") format("truetype");
+}
+
+/* body */
+body {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+    background: #000000;
+    color: #ffffff;
+    font-family: 'しねきゃぷしょん', sans-serif
+    }
+
+
+
+body ul {
+    list-style: none;
+}
+
+a:hover {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:visited {
+    color: #ffffff;
+}
+
+body .user {
+    float: left;
+    padding-left: 60px;
+    padding-right: 30px;
+}
+body .no_login {
+    color: rgb(100, 130, 130);
+    float: left;
+    padding-left: 60px;
+    padding-right: 30px;
+}
+body .count {
+    float: left;
+}
+
+body #index {
+    padding-top: 20px;
+    padding-left: 30px;
+    font-size: 20px;   
+}
+body #index h4 {
+    padding-left: 20px;
+}
+
+body #rack {
+    width: 90%;
+    border: 2px solid #969696;
+    margin: 0px auto;
+    margin-bottom: 120px;
+    padding: 25px 25px 15px 25px;
+    float: left;
+}
+
+body #record {
+    clear: both;
+    border-bottom: 1px solid #969696;
+}
+
+body #rack p {
+    float: left;
+}
+
+body #rack .media {
+    width: 200px;
+    color: #c7c7ff;
+    clear: both;
+}
+body #rack .title {
+    width: 400px;
+    color: #ffffff;
+}
+body #rack .artist {
+    color: #ffc7ff;
+}
+
+
+
+/* ヘッダー */
+header {
+    width: 90%;
+    margin: 0px;
+    padding-top: 20px;
+    padding-left: 40px;
+    /* border-bottom: 1px solid #ffffff ; */
+}
+header .top {
+    float: left;
+    color: #ffffff;
+    text-decoration: none;
+    transform: rotate(-7deg) skewX(-10deg);
+}
+header .top:hover{
+    color: #ffc7ff;
+    transition: 0.4s;
+}
+header h4{
+    padding-left: 40px;
+    padding-top: 15px;
+    float: left;
+}
+header ul {
+    float: right;
+    margin: 0px;
+    /* padding-right: 60px; */
+}
+
+main .clear{
+    clear: both;
+    width: 100%;
+    margin: 0px;
+    padding: 15px 0px;
+    border-bottom: 1px solid #ffffff;
+}
+
+main label {
+    margin: 0px;
+    margin-bottom: 50px;
+}
+
+body .container {
+    clear: both;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+/* フッター */
+footer {
+    position: fixed;
+    margin: 0px;
+    width: 100%;
+    bottom: 0px;
+    margin-top: 50px;
+    background-color: #000000;
+    text-align: center;
+}
+
+footer small {
+    margin-bottom: 10px;
+    display: block;
+    color: #969696;
+}

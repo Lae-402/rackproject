@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Photo Detail{% endblock %}
+
+    {% block contents %}
+    <div class="container">
+        <p>削除してもいいですか？</p>
+        {% csrf_token %}
+        <button type="submit">削除</button>
+        <a href="{% url 'rackapp:rack_detail' object.pk %}">キャンセル</a>
+    </div>
+    {% endblock %}

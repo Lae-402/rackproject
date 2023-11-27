@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Rack Manager -Rack{% endblock %}
+
+{% block contents %}
+{% comment %} ログインしている {% endcomment %}
+{% if user.is_authenticated %}
+
+    <br><br>
+    <h2 class="user">{{ user.username }} さんのラック</h2>
+
+    {% comment %} レコードが０件 {% endcomment %}
+    {% if object_list.count == 0 %}
+        <h2>登録がありません</h2>
+
+    {% comment %} レコードが１件以上ある {% endcomment %}
+    {% else %}
+        <h2 class="count"><small>( {{ object_list.count }} 件)</small></h2><br>
+
+        <div class="container">
+            <div id="rack">
+                {% for record in object_list %}
+                    <div id="record">
+                        <a href="{% url 'rackapp:media' media=record.media.id %}"><p class="media">{{record.media}}</p></a>
+                        {% comment %} <p class="media">{{record.media}}</p> {% endcomment %}
+                        <a href="{% url 'rackapp:detail' record.pk %}"><p class="title">{{record.title}}</p></a>
+                        {% comment %} <p class="title">{{record.title}}</p> {% endcomment %}
+                        <a href="{% url 'rackapp:artist' artist=record.artist.id %}"><p class="artist">{{record.artist}}</p></a>
+                        {% comment %} <p class="artist">{{record.artist}}</p> {% endcomment %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    {% endif %}
+
+{% comment %} ログインしていない {% endcomment %}
+{% else %}
+    <br><br>
+    <h2 class="no_login">あ</h2>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Rack Manager -Top{% endblock %}
+
+{% block contents %}
+    {% if user.is_authenticated %}
+    <div id="index">
+        <ul>
+            <li><a href="{% url 'rackapp:rack' %}">操作説明</a></li>
+            <h4>Rack Managerの機能やその使い方を知りたい方はこちら</h4>
+            <li><a href="{% url 'rackapp:rack' %}">ラックの閲覧</a></li>
+            <h4>登録したデータの一覧を表示します</h4>
+            <li><a href="{% url 'rackapp:rack' %}">所持登録</a></li>
+            <h4>新たなデータの登録をします</h4>
+        </ul>
+    </div>
+    {% else %}
+
+    {% endif %}
+{% endblock %}

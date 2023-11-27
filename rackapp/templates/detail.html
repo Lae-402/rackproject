@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block tile %}Rack Detail{% endblock  %}
+
+    {% block contents %}
+    <br>
+    <div class="container">
+        <div class="col offset-3">
+            <h2>{{object.title}}</h2>
+            <p>{{object.ruby}}</p>
+            <p>{{object.madia}}</p>
+            <br>
+            <p>{{object.posted_at}}に投稿</p>
+
+            <form actiion="{% url 'rackapp:delete' object.pk %}" method="get">
+            {% csrf_token %}
+            <p><input type="submit" value="削除"></p>
+            </form>
+            {% comment %} <a href="{% url 'rackapp:delete' object.pk %}">削除する</a> {% endcomment %}
+        </div>
+    </div>
+    {% endblock %}

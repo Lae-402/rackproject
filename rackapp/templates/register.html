@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Post{% endblock %}
+
+    {% block contents %}
+    <br>
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>媒体</th>
+                    <td>{{ form.media }}</td>
+                </tr>
+                <tr>
+                    <th>タイトル</th>
+                    <td>{{ form.title }}</td>
+                </tr>
+                <tr>
+                    <th>ふりがな</th>
+                    <td>{{ form.ruby }}</td>
+                </tr>
+                <tr>
+                    <th>アーティスト</th>
+                    <td>{{ form.artist }}</td>
+                </tr>
+            </table>
+            <hr>
+            <button type="submit">投稿する</button>
+        </form>
+    </div>
+    {% endblock %}

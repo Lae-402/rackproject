@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Log in{% endblock %}
+
+{% block contents %}
+<div class="container">
+  {% if form.errors %}
+    <p style="color: red">ユーザー名とパスワードが一致しません。</p>
+  {% endif %}
+  <h3>ログイン</h3>
+  <form method="post">
+    {% csrf_token %}
+
+
+    <label for="Username" class="visually-hidden">ユーザー名：</label>
+    <input type="text"
+          name="username"
+          id="id_username"
+          maxlength="150"
+          autocapitalize="none"
+          autocomplete="username"
+          class="from-control"
+          required autofocus><br><br>
+    <label for="Password" class="visually-hidden">パスワード：</label>
+    <input type="password"
+          name="password"
+          id="id_password"
+          autocomplete="current-password"
+          class="form-control"
+          required autofocus><br><br>
+
+
+
+    <input class="w-100 btn btn-lg btn-primary" type="submit" value="Log in">
+    <br><br>
+    <p><a href="{% url 'password_reset' %}">パスワードを忘れましたか？</a></p>
+    <input type="hidden"
+          name="next"
+          value="{% url 'rackapp:index' %}">
+  </form>
+</div>
+{% endblock %}

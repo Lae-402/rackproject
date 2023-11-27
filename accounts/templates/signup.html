@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Sign up{% endblock %}
+
+{% block contents %}
+<div class="container">
+    <h3>会員登録</h3>
+    <form method = "post">
+        {% csrf_token %}
+
+        {% for field in form %}
+        <label>{{ field.label_tag }}</label>
+            <p>{{ field }}</p>
+            {% if field.help_text %}
+                <small style="color: grey">{{ field.help_text }}</small>
+            {% endif %}
+            {% for error in field.errors %}
+                <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        <br><br><br>
+        {% endfor %}
+
+
+        <p style="color:red">
+        ※メールアドレスはパスワードをリセットする際に必要になりますので、登録をお願いします。
+        </p>
+        <input type="submit" value="Sign up">
+    </form>
+    <br>
+    <p><a href="{% url 'rackapp:index' %}">登録をやめてトップページに戻る</p>
+</div>
+{% endblock %}
