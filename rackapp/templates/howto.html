@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Rack Manager -How To{% endblock %}
+
+    {% block contents %}
+    <div class="container">
+
+        <ul class="howto">
+            <li>
+                <h3 class="caption">文字の種類</h3><br>
+                <h3>色がある文字や下線が引かれている文字には何かしらの機能があります。</h3><br>
+                <h3>まずはクリックしてみるといいかもしれません。</h3>
+            </li>
+
+            <li>
+                <h3 class="caption">所持登録</h3><br>
+                <h3>コレクションのデータを登録することができます。</h3><br>
+                <h3>媒体・アーティストは一覧からの選択、タイトル・ふりがなは直接入力です。</h3><br>
+                <h3>アーティストは追加登録することも可能です。</h3>
+            </li>
+
+            <li>
+                <h3 class="caption">所持一覧を閲覧する</h3><br>
+                <h3><h3 class="media">媒体名</h3>や<h3 class="artist">アーティスト名</h3>をクリックすると、フィルター検索をすることができます。</h3><br>
+                <h3>「<h3 class="link">全件表示</h3>」をクリックするとフィルターを解除できます。</h3><br>
+                <h3>作品名（白字）をクリックすると登録データの詳細を見ることができます。</h3>
+            </li>
+
+            <li>
+                <h3  class="caption">詳細画面</h3><br>
+                <h3>所持一覧と同じく、<h3 class="media">媒体名</h3>や<h3 class="artist">アーティスト名</h3>をクリックするとフィルター検索ができます。</h3><br>
+                <h3>また、詳細表示画面からは、所持登録を削除することも可能です。</h3><br>
+            </li>
+
+            <h3><p><a href="{% url 'rackapp:index' %}">トップページへ</a></p></h3>
+            
+        </ul>
+
+    </div>
+    {% endblock %}

@@ -4,18 +4,36 @@
     {% block contents %}
     <br>
     <div class="container">
-        <div class="col offset-3">
-            <h2>{{object.title}}</h2>
-            <p>{{object.ruby}}</p>
-            <p>{{object.madia}}</p>
+        <div id="detail">
             <br>
-            <p>{{object.posted_at}}に投稿</p>
+            <h3>{{object.ruby}}</h3>
+            <h1>{{object.title}}</h1><br>
+            <h2>
+                <h2 class="line">ｱｰﾃｨｽﾄ｜</h2>
+                <a href="{% url 'rackapp:artist' artist=object.artist.id %}"><h2 class="artist">{{object.artist}}</h2></a>
+            </h2><br>
+            {% comment %} <a href="{% url 'rackapp:media' media=object.media.id %}">
+                <h2 class="line">媒体　｜</h2>
+                <h2 class="media">{{object.media}}</h2>
+            </a><br> {% endcomment %}
+            <h2>
+                <h2 class="line">媒体　｜</h2>
+                <a href="{% url 'rackapp:media' media=object.media.id %}"><h2 class="media">{{object.media}}</h2></a>
+            </h2>
+            <br>
+            <h3>{{object.posted_at}}に追加</h3>
+        </div>
 
-            <form actiion="{% url 'rackapp:delete' object.pk %}" method="get">
+                    {% comment %} <div id="record">
+                        <a href="{% url 'rackapp:media' media=record.media.id %}"><p class="media">{{record.media}}</p></a>
+                        <a href="{% url 'rackapp:detail' record.pk %}"><p class="title">{{record.title}}</p></a>
+                        <a href="{% url 'rackapp:artist' artist=record.artist.id %}"><p class="artist">{{record.artist}}</p></a>
+                    </div> {% endcomment %}
+
+        <form action="{% url 'rackapp:delete' object.pk %}" method="get">
             {% csrf_token %}
             <p><input type="submit" value="削除"></p>
-            </form>
-            {% comment %} <a href="{% url 'rackapp:delete' object.pk %}">削除する</a> {% endcomment %}
-        </div>
+            <a href="{% url 'rackapp:rack' %}">一覧に戻る</a>
+        </form>
     </div>
     {% endblock %}

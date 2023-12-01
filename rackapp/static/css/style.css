@@ -14,22 +14,66 @@ body {
     margin-bottom: 50px;
     background: #000000;
     color: #ffffff;
-    font-family: 'しねきゃぷしょん', sans-serif
+    font-family: 'しねきゃぷしょん', sans-serif;
     }
 
-
+h2 {
+    font-weight: lighter;
+}
+h3 {
+    font-weight: lighter;
+}
+h4 {
+    font-weight: lighter;
+}
 
 body ul {
     list-style: none;
 }
 
-a:hover {
+body button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 3px double #ffffff;
+    font-family: inherit;
     color: #ffffff;
-    font-weight: bold;
+    background: #000000;
+    padding: 7px 15px;
+    cursor: pointer;
+}
+body button:hover {
+    transition: 0.2s;
+    box-shadow: 0 0 5px 2px #ffffff;
+}
+
+body p input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 3px double #ffffff;
+    font-family: inherit;
+    color: #ffffff;
+    background: #000000;
+    padding: 7px 15px;
+    cursor: pointer;
+}
+body p input:hover {
+    transition: 0.2s;
+    box-shadow: 0 0 5px 2px #ffffff;
+}
+
+a {
+    color: #ffffff;
+    /* color: #ffdc7b; */
     text-decoration: none;
+    border-bottom: 3px double #ffffff;
+}
+a:hover {
+    font-weight: bold;
 }
 a:visited {
-    color: #ffffff;
+    text-decoration: none;
 }
 
 body .user {
@@ -38,13 +82,22 @@ body .user {
     padding-right: 30px;
 }
 body .no_login {
-    color: rgb(100, 130, 130);
-    float: left;
     padding-left: 60px;
     padding-right: 30px;
 }
 body .count {
     float: left;
+}
+
+main #all {
+    margin-left: 17px;
+    font-size: 17px;
+    text-decoration: none;
+    font-weight: lighter;
+}
+main #all:hover {
+    font-weight: bold;
+    text-decoration: none;
 }
 
 body #index {
@@ -87,6 +140,58 @@ body #rack .artist {
     color: #ffc7ff;
 }
 
+/* How To */
+body ul.howto {
+    margin: 20px 0px;
+    list-style-type: disc;
+}
+body ul.howto h3 {
+    margin: 0;
+    padding:  10px 0;
+    display: inline-block;
+}
+body ul.howto h3.caption {
+    margin: 0;
+    margin-bottom: 10px;
+    padding-top: 30px;
+    padding-bottom: 2.5px;
+}
+body ul.howto h3.link {
+    color: #ffdc7b;
+}
+body ul.howto h3.media {
+    color: #c7c7ff;
+}
+body ul.howto h3.artist {
+    color: #ffc7ff;
+}
+
+body h2.line {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+body h2.artist {
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    color: #ffc7ff;
+}
+body h2.artist:hover {
+    font-weight: bold;
+}
+body h2.media {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    color: #c7c7ff;
+}
+body h2.media:hover {
+    font-weight: bold;
+}
+
 
 
 /* ヘッダー */
@@ -101,6 +206,7 @@ header .top {
     float: left;
     color: #ffffff;
     text-decoration: none;
+    border-bottom: none;
     transform: rotate(-7deg) skewX(-10deg);
 }
 header .top:hover{
@@ -115,9 +221,14 @@ header h4{
 header ul {
     float: right;
     margin: 0px;
-    /* padding-right: 60px; */
 }
-
+header a {
+    /* text-decoration: underline; */
+    color: #ffffff;
+}
+header a:hover {
+    text-decoration: none;
+}
 main .clear{
     clear: both;
     width: 100%;
@@ -135,6 +246,18 @@ body .container {
     clear: both;
     padding-left: 50px;
     padding-top: 20px;
+    margin-bottom: 100px;
+}
+
+
+body #detail a{
+    border-bottom: none;
+}
+body #detail h2.artist {
+    margin: 0;
+}
+body #detail h2.media {
+    margin-bottom: 20px;
 }
 
 /* フッター */
@@ -146,6 +269,11 @@ footer {
     margin-top: 50px;
     background-color: #000000;
     text-align: center;
+}
+
+footer hr{
+    margin: 0;
+    padding: 0;
 }
 
 footer small {

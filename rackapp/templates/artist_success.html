@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Artist Success{% endblock %}
+
+    {% block contents %}
+    <div class="container">
+        <h4>追加が完了しました！</h4>
+        <a href="{% url 'rackapp:register' %}">所持追加へ</a>
+    </div>
+    {% endblock %}

@@ -13,15 +13,15 @@
 
     <header>
         <a href="{% url 'rackapp:index' %}" class="top"><h1>Rack Manager</h1></a>
-        <h4>ラック管理アプリです。多重購入防止や、コレクション自慢などにお役立てください。</h4>
+        <h4>ラック管理アプリです。多重購入防止やコレクション自慢などにお役立てください。</h4>
         <br>
          <ul>
             {% if user.is_authenticated %}
             <li><a href="{% url 'accounts:logout' %}">ログアウト</a></li><br>
             <li><a href="{% url 'password_reset' %}">パスワードのリセット</a></li>
             {% else %}
-            <li><a href="{% url 'accounts:signup' %}">会員登録</a></li><br>
-            <li><a href="{% url 'accounts:login' %}">ログイン</a></li>
+            <li><a href="{% url 'accounts:login' %}">ログイン</a></li><br>
+            <li><a href="{% url 'accounts:signup' %}">会員登録</a></li>
             {% endif %}
          </ul>
     </header>

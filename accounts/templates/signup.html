@@ -3,13 +3,13 @@
 
 {% block contents %}
 <div class="container">
-    <h3>会員登録</h3>
+    <h2>会員登録</h2>
     <form method = "post">
         {% csrf_token %}
 
         {% for field in form %}
         <label>{{ field.label_tag }}</label>
-            <p>{{ field }}</p>
+            {{ field }}
             {% if field.help_text %}
                 <small style="color: grey">{{ field.help_text }}</small>
             {% endif %}
@@ -23,7 +23,7 @@
         <p style="color:red">
         ※メールアドレスはパスワードをリセットする際に必要になりますので、登録をお願いします。
         </p>
-        <input type="submit" value="Sign up">
+        <p><input type="submit" value="サインアップ"></p>
     </form>
     <br>
     <p><a href="{% url 'rackapp:index' %}">登録をやめてトップページに戻る</p>

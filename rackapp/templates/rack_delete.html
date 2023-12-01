@@ -3,9 +3,11 @@
 
     {% block contents %}
     <div class="container">
-        <p>削除してもいいですか？</p>
-        {% csrf_token %}
-        <button type="submit">削除</button>
-        <a href="{% url 'rackapp:rack_detail' object.pk %}">キャンセル</a>
+        <form method="POST">
+            <h3>削除してもよろしいですか？　※削除後は元に戻せません</h3>
+            {% csrf_token %}
+            <button type="submit">削除</button>
+            <a href="{% url 'rackapp:detail' object.pk %}">キャンセル</a>
+        </form>
     </div>
     {% endblock %}

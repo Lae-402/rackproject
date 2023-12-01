@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Post{% endblock %}
+{% block title %}Rack Manager -Post{% endblock %}
 
     {% block contents %}
     <br>
@@ -25,8 +25,9 @@
                     <td>{{ form.artist }}</td>
                 </tr>
             </table>
-            <hr>
-            <button type="submit">投稿する</button>
+            <br>
+            <button type="submit">追加</button>
+            <a href="{% url 'rackapp:register_artist' %}">アーティストの追加・削除はこちら</a>
         </form>
     </div>
     {% endblock %}

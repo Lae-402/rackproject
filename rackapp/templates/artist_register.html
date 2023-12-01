@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Rack Manager -Artist{% endblock %}
+
+    {% block contents %}
+    <br>
+    <div class="container">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>アーティスト名</th>
+                    <td>{{ form.title }}</td>
+                </tr>
+                <p>※追加後の編集・削除はできません</p>
+            </table>
+            <br>
+            <button type="submit">追加</button>
+            <a href="{% url 'rackapp:register' %}">前の画面に戻る</a>
+        </form>
+    </div>
+    {% endblock %}

@@ -16,18 +16,18 @@
 
     {% comment %} レコードが１件以上ある {% endcomment %}
     {% else %}
-        <h2 class="count"><small>( {{ object_list.count }} 件)</small></h2><br>
+        <h2 class="count">
+            <small>( {{ object_list.count }} 件)</small>
+            <a href="{% url 'rackapp:rack' %}" id="all">全件表示</a>
+        </h2><br>
 
         <div class="container">
             <div id="rack">
                 {% for record in object_list %}
                     <div id="record">
                         <a href="{% url 'rackapp:media' media=record.media.id %}"><p class="media">{{record.media}}</p></a>
-                        {% comment %} <p class="media">{{record.media}}</p> {% endcomment %}
                         <a href="{% url 'rackapp:detail' record.pk %}"><p class="title">{{record.title}}</p></a>
-                        {% comment %} <p class="title">{{record.title}}</p> {% endcomment %}
                         <a href="{% url 'rackapp:artist' artist=record.artist.id %}"><p class="artist">{{record.artist}}</p></a>
-                        {% comment %} <p class="artist">{{record.artist}}</p> {% endcomment %}
                     </div>
                 {% endfor %}
             </div>
@@ -38,6 +38,11 @@
 {% comment %} ログインしていない {% endcomment %}
 {% else %}
     <br><br>
-    <h2 class="no_login">あ</h2>
+    <ul>
+        <li><a href="{% url 'accounts:login' %}">ログイン</a></li>
+        <h4>既にアカウントをお持ちの方はこちら</h4>
+        <li><a href="{% url 'accounts:signup' %}">会員登録</a></li>
+        <h4>まだアカウントをお持ちでない方はこちら</h4>
+    </ul>
 {% endif %}
 {% endblock %}

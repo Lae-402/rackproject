@@ -4,18 +4,21 @@
 {% block title %}Rack Manager -Top{% endblock %}
 
 {% block contents %}
-    {% if user.is_authenticated %}
     <div id="index">
         <ul>
-            <li><a href="{% url 'rackapp:rack' %}">操作説明</a></li>
-            <h4>Rack Managerの機能やその使い方を知りたい方はこちら</h4>
-            <li><a href="{% url 'rackapp:rack' %}">ラックの閲覧</a></li>
-            <h4>登録したデータの一覧を表示します</h4>
-            <li><a href="{% url 'rackapp:rack' %}">所持登録</a></li>
-            <h4>新たなデータの登録をします</h4>
+            <li><a href="{% url 'rackapp:howto' %}">操作説明</a></li>
+            <h4>Rack Managerの機能やその使い方を知りたい方はこちら</h4><br>
+            {% if user.is_authenticated %}
+                    <li><a href="{% url 'rackapp:rack' %}">ラックの閲覧</a></li>
+                    <h4>登録したデータの一覧を表示します</h4>
+                    <li><a href="{% url 'rackapp:register' %}">所持登録</a></li>
+                    <h4>新たなデータの登録をします</h4>
+            {% else %}
+                    <li><a href="{% url 'accounts:login' %}">ログイン</a></li>
+                    <h4>既にアカウントをお持ちの方はこちら</h4>
+                    <li><a href="{% url 'accounts:signup' %}">会員登録</a></li>
+                    <h4>まだアカウントをお持ちでない方はこちら</h4>
+            {% endif %}
         </ul>
     </div>
-    {% else %}
-
-    {% endif %}
 {% endblock %}
