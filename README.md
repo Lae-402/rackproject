@@ -31,6 +31,7 @@ python manage.py migrate
 python manage.py runserver
 
 
+###### =================================
 ## テストアカウント
-###　ＩＤ：lae
-### パスワード：test0825
+#### ＩＤ：lae
+#### パスワード：test0825
